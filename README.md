@@ -1,5 +1,8 @@
 # UltraTranslate
 
+[![GitHub stars](https://img.shields.io/github/stars/AptlyVR/UltraTranslate?style=social)](https://github.com/AptlyVR/UltraTranslate/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Real-time, multi-speaker voice translation for VRChat (or any PC audio), running fully local on one GPU.
 
 ![screenshot](docs/screenshot.png)
@@ -95,3 +98,7 @@ driving the same pipeline from another app (e.g. a phone front end).
 
 ## License
 MIT, see [LICENSE](LICENSE). Model weights keep their own licenses.
+
+## Star history
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AptlyVR/UltraTranslate&type=Date)](https://star-history.com/#AptlyVR/UltraTranslate&Date)
