@@ -1,0 +1,32 @@
+# UltraTranslate app (install.cmd installs these into .venv; torch comes from the CUDA index first)
+torch>=2.6
+torchaudio>=2.6
+PyQt6>=6.8
+numpy>=2.2
+scipy>=1.15
+soundfile>=0.13
+soxr>=0.5
+PyAudioWPatch>=0.2.12
+sounddevice>=0.5
+av>=14
+requests>=2.32
+websocket-client>=1.8
+huggingface_hub>=0.30
+faster-whisper>=1.1.1
+silero-vad>=5.1
+onnxruntime-gpu>=1.20   # CPU provider included (Smart Turn), CUDA for GPU OCR
+pyannote.audio>=4.0
+speechbrain>=1.0
+transformers>=4.51
+langdetect>=1.0.9
+pynput>=1.7
+openvr>=2.5
+pycaw>=20240316
+comtypes>=1.4
+opencv-python>=4.10
+Pillow>=11
+mss>=9
+rapidocr>=3.0
+# benchmark tools (optional)
+sacrebleu>=2.4
+scikit-learn>=1.5

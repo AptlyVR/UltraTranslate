@@ -1,0 +1,6 @@
+# Own-voice read-aloud server (tts_server/). install.cmd installs these unless you skip the voice server.
+voxcpm>=2.0.3
+flask>=3.0
+librosa>=0.10
+# compiles the fast path on Windows (without it speech starts ~4 s late instead of ~85 ms)
+triton-windows<3.7; sys_platform == "win32"

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="560" rx="18" fill="#0f1118"/>
+  <text x="32" y="46" fill="#c0caf5" font-size="22" font-weight="700">UltraTranslate pipeline</text>
+  <text x="32" y="70" fill="#7d84a8" font-size="13">From someone speaking near you to their translated voice in your ears. Measured stage times on an RTX 5090.</text>
+
+  <!-- stage cards -->
+  <g font-size="13">
+    <g transform="translate(32,96)">
+      <rect width="134" height="150" rx="12" fill="#161927" stroke="#2e3452"/>
+      <text x="14" y="28" fill="#7aa2f7" font-weight="700" font-size="14">Capture</text>
+      <text x="14" y="52" fill="#d8dcf0">WASAPI loopback</text>
+      <text x="14" y="70" fill="#d8dcf0">16 kHz frames</text>
+      <text x="14" y="96" fill="#9aa5ce" font-size="12">game auto-ducked,</text>
+      <text x="14" y="112" fill="#9aa5ce" font-size="12">own voice</text>
+      <text x="14" y="128" fill="#9aa5ce" font-size="12">echo-cancelled</text>
+    </g>
+    <g transform="translate(186,96)">
+      <rect width="134" height="150" rx="12" fill="#161927" stroke="#2e3452"/>
+      <text x="14" y="28" fill="#7aa2f7" font-weight="700" font-size="14">Turn-taking</text>
+      <text x="14" y="52" fill="#d8dcf0">Silero VAD</text>
+      <text x="14" y="70" fill="#d8dcf0">Smart Turn v3.2</text>
+      <text x="14" y="96" fill="#9aa5ce" font-size="12">commits a finished</text>
+      <text x="14" y="112" fill="#9aa5ce" font-size="12">sentence ~96 ms</text>
+      <text x="14" y="128" fill="#9aa5ce" font-size="12">after a pause</text>
+    </g>
+    <g transform="translate(340,96)">
+      <rect width="134" height="150" rx="12" fill="#161927" stroke="#2e3452"/>
+      <text x="14" y="28" fill="#7aa2f7" font-weight="700" font-size="14">Recognition</text>
+      <text x="14" y="52" fill="#d8dcf0">Whisper large-v3</text>
+      <text x="14" y="70" fill="#d8dcf0">turbo, 32 langs</text>
+      <text x="14" y="96" fill="#9aa5ce" font-size="12">speculative ASR,</text>
+      <text x="14" y="112" fill="#9aa5ce" font-size="12">language sticky</text>
+      <text x="14" y="128" fill="#9aa5ce" font-size="12">per speaker</text>
+    </g>
+    <g transform="translate(494,96)">
+      <rect width="134" height="150" rx="12" fill="#161927" stroke="#2e3452"/>
+      <text x="14" y="28" fill="#7aa2f7" font-weight="700" font-size="14">Diarization</text>
+      <text x="14" y="52" fill="#d8dcf0">pyannote seg-3.0</text>
+      <text x="14" y="70" fill="#d8dcf0">ECAPA+ReDimNet</text>
+      <text x="14" y="96" fill="#9aa5ce" font-size="12">up to 12 voices,</text>
+      <text x="14" y="112" fill="#9aa5ce" font-size="12">named from the</text>
+      <text x="14" y="128" fill="#9aa5ce" font-size="12">instance player list</text>
+    </g>
+    <g transform="translate(648,96)">
+      <rect width="134" height="150" rx="12" fill="#161927" stroke="#2e3452"/>
+      <text x="14" y="28" fill="#7aa2f7" font-weight="700" font-size="14">Translation</text>
+      <text x="14" y="52" fill="#d8dcf0">Hy-MT2 7B</text>
+      <text x="14" y="70" fill="#d8dcf0">38 target langs</text>
+      <text x="14" y="96" fill="#9aa5ce" font-size="12">local llama-server,</text>
+      <text x="14" y="112" fill="#9aa5ce" font-size="12">1.8B fallback when</text>
+      <text x="14" y="128" fill="#9aa5ce" font-size="12">VRAM is tight</text>
+    </g>
+    <g transform="translate(802,96)">
+      <rect width="166" height="150" rx="12" fill="#1d4d33" stroke="#3fbf7f"/>
+      <text x="14" y="28" fill="#eafff2" font-weight="700" font-size="14">Their own voice</text>
+      <text x="14" y="52" fill="#eafff2">VoxCPM2 streaming</text>
+      <text x="14" y="70" fill="#eafff2">voice clone</text>
+      <text x="14" y="96" fill="#bfeccf" font-size="12">each speaker cloned</text>
+      <text x="14" y="112" fill="#bfeccf" font-size="12">from their own</text>
+      <text x="14" y="128" fill="#bfeccf" font-size="12">speech, automatically</text>
+    </g>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#4d5680" stroke-width="2" fill="none">
+    <path d="M168 171 h16"/><path d="M322 171 h16"/><path d="M476 171 h16"/><path d="M630 171 h16"/><path d="M784 171 h16"/>
+  </g>
+
+  <!-- latency bar -->
+  <text x="32" y="292" fill="#c0caf5" font-size="15" font-weight="700">Speech end → translated voice ≈ 0.5 s</text>
+  <text x="330" y="292" fill="#7d84a8" font-size="12">(sum of the measured medians below)</text>
+  <g transform="translate(32,306)">
+    <rect width="936" height="34" rx="8" fill="#161927"/>
+    <rect x="0" y="0" width="560" height="34" rx="8" fill="#3d59a1"/>
+    <rect x="560" y="0" width="190" height="34" fill="#8a6416"/>
+    <rect x="750" y="0" width="90" height="34" fill="#2d7d46"/>
+    <text x="14" y="22" fill="#ffffff" font-size="13">text on screen 0.30–0.43 s</text>
+    <text x="570" y="22" fill="#fff3d6" font-size="13">translate 0.08–0.27 s</text>
+    <text x="756" y="22" fill="#eafff2" font-size="12">voice 22–130 ms</text>
+  </g>
+
+  <!-- stat tiles -->
+  <g font-size="12">
+    <g transform="translate(32,370)">
+      <rect width="174" height="154" rx="12" fill="#161927" stroke="#232741"/>
+      <text x="14" y="44" fill="#ffffff" font-size="30" font-weight="700">32 → 38</text>
+      <text x="14" y="70" fill="#9aa5ce">spoken languages</text>
+      <text x="14" y="86" fill="#9aa5ce">detected → translation</text>
+      <text x="14" y="102" fill="#9aa5ce">targets</text>
+      <text x="14" y="134" fill="#6b7194" font-size="11">22/22 languages right in a</text>
+      <text x="14" y="148" fill="#6b7194" font-size="11">9-language, 11-person test</text>
+    </g>
+    <g transform="translate(222,370)">
+      <rect width="174" height="154" rx="12" fill="#161927" stroke="#232741"/>
+      <text x="14" y="44" fill="#ffffff" font-size="30" font-weight="700">10.5 %</text>
+      <text x="14" y="70" fill="#9aa5ce">speaker error, online,</text>
+      <text x="14" y="86" fill="#9aa5ce">10 multi-speaker scenes</text>
+      <text x="14" y="134" fill="#6b7194" font-size="11">real 2-person talk: exactly</text>
+      <text x="14" y="148" fill="#6b7194" font-size="11">2 speakers found</text>
+    </g>
+    <g transform="translate(412,370)">
+      <rect width="174" height="154" rx="12" fill="#161927" stroke="#232741"/>
+      <text x="14" y="44" fill="#ffffff" font-size="30" font-weight="700">5–7 %</text>
+      <text x="14" y="70" fill="#9aa5ce">transcript error on</text>
+      <text x="14" y="86" fill="#9aa5ce">clean speech</text>
+      <text x="14" y="134" fill="#6b7194" font-size="11">10.6 min real conversation:</text>
+      <text x="14" y="148" fill="#6b7194" font-size="11">kept real time (636 s in 637 s)</text>
+    </g>
+    <g transform="translate(602,370)">
+      <rect width="174" height="154" rx="12" fill="#161927" stroke="#232741"/>
+      <text x="14" y="44" fill="#ffffff" font-size="30" font-weight="700">7 / 7</text>
+      <text x="14" y="70" fill="#9aa5ce">real chat bubbles read</text>
+      <text x="14" y="86" fill="#9aa5ce">exactly, 0 false</text>
+      <text x="14" y="134" fill="#6b7194" font-size="11">Qwen3-VL-4B ~0.6 s or</text>
+      <text x="14" y="148" fill="#6b7194" font-size="11">RapidOCR 0.2–0.7 s, no hooks</text>
+    </g>
+    <g transform="translate(792,370)">
+      <rect width="176" height="154" rx="12" fill="#161927" stroke="#232741"/>
+      <text x="14" y="44" fill="#ffffff" font-size="30" font-weight="700">90 Hz</text>
+      <text x="14" y="70" fill="#9aa5ce">SteamVR panel: either</text>
+      <text x="14" y="86" fill="#9aa5ce">wrist, head or world</text>
+      <text x="14" y="134" fill="#6b7194" font-size="11">tap a name in VR to</text>
+      <text x="14" y="148" fill="#6b7194" font-size="11">assign it to a voice</text>
+    </g>
+  </g>
+</svg>

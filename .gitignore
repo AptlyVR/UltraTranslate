@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+models/*.onnx
+test_audio/
+translatehub/logs/
+*.log
+.venv/
+settings/
+.cache/
+loras/
